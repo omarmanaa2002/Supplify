@@ -1,0 +1,85 @@
+.prod-con{
+ max-width: 650px;
+ justify-content: space-around;
+ margin: 0 auto;
+ margin-top: 50px;
+ display: flex;
+ justify-content: center;
+ flex-wrap: wrap;
+ padding-bottom: 100px;
+}
+
+
+.prod-con .cartcl{
+font-size: 20px;
+background-color: aliceblue;
+margin-left: 10px;
+margin-right: 10px;
+cursor: pointer;
+border-radius: 30px;
+}
+
+
+
+
+.prod-head{
+width: 100%;
+max-width: 650px;
+display: flex;
+justify-content: flex-start;
+border-bottom:4px solid lightgray;
+margin: 0 auto;
+}
+
+.prod-tit{
+width: 45%;
+}
+.price{
+width: 15%;
+border-bottom: 1px solid lightgray;
+display: flex;
+align-items: center;
+}
+.quantity{
+    width: 30%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+}
+.total{
+    width: 10%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+}
+
+.products1{
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid lightgray;
+}
+.products1 img{
+   
+    max-width: 75px;
+}
+
+.totalCon{
+display: flex;
+justify-content: flex-end;
+width: 100%;
+padding: 10px 0;
+}
+
+.totalTil{
+width: 20%;
+font-size: 14px;
+}
+
+.Btotal{
+width: 10%;
+font-size: 14px;
+}
