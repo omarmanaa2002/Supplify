@@ -1,46 +1,11 @@
-let products = {
-    data:[{
-        productName:"Raw Meat",
-        category:"Meat",
-        price:400,
-        image:"images/Meat.png",
-        inCart:0,
-        
-       
-    },
-    {
-        productName:"Raw Chicken",
-        category:"ChickenMeat",
-        price:130,
-        image:"images/chicken.png",
-        inCart:0,
-        
-    },
-    {
-        productName:"Banana",
-        category:"Fruits&Vegetables",
-        price:50,
-        image:"images/banana.png",
-        inCart:0,
-      
-    },
-    {
-        productName:"Raw Fish",
-        category:"Fishmeat",
-        price:100,
-        image:"images/fish.png",
-        inCart:0,
-      
-    },
-],
-};
+let products = [];
 
-for(let i of products.data){
+for(let i of products){
    //create cards
    
    let card = document.createElement("div");
    //card must have a cat and stay hidden
-   card.classList.add("card", i.category , "hide");
+   card.classList.add("card", i.prodType , "hide");
    //image div
    let imgContainer = document.createElement("div");
    imgContainer.classList.add("image-container");
@@ -64,7 +29,7 @@ container.classList.add("container");
 //product name
 let name = document.createElement("h5");
 name.classList.add("product-name");
-name.innerText = i.productName.toUpperCase();
+name.innerText = i.name.toUpperCase();
 container.appendChild(name);
 
 //prices
@@ -156,8 +121,8 @@ let carts = document.querySelectorAll('#addbtn');
 for (let i=0; i < carts.length;i++){
    
     carts[i].addEventListener('click', () =>{
-        cartNumbers(products.data[i]);
-        totalCost(products.data[i]);
+        cartNumbers(products[i]);
+        totalCost(products[i]);
     })
 }
 
@@ -198,20 +163,20 @@ function setItems(product){
 
     if(cartItems != null){
    
-if(cartItems[product.productName] == undefined) {
+if(cartItems[product.name] == undefined) {
     cartItems = {
         ...cartItems,
-        [product.productName]: product
+        [product.name]: product
     }
 }
 
 
-        cartItems[product.productName].inCart += 1;
+        cartItems[product.name].inCart += 1;
     }else{
 
     product.inCart = 1;
 
-    cartItems = {[product.productName]: product
+    cartItems = {[product.name]: product
     }
     }
 
