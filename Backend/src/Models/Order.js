@@ -1,20 +1,21 @@
 const { Schema, default: mongoose } = require("mongoose");
+const Catalogue = require("./Catalogue");
 
 const OrderSchema = new Schema({
-    fees: {
+    quantity: {
         type: Number,
     },
     totalprice: {
-        type:   Number,
+        type:  Number,
     },
-    date: {
-    type: Date,
-    },
-    status: {
-        type: String,
-    },
-    shippingaddress: {
-        type: String,
+    // date: {
+    // type: Date,
+    // },
+    // shippingaddress: {
+    //     type: String,
+    // },
+    cart : {
+        type: [Catalogue]
     }
 
 });

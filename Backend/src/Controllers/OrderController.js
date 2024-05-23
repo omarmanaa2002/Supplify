@@ -5,6 +5,14 @@ const createOrder = async (req, res) => {
     try {
 
         const body = req.body;
+        //conversion prodcutsInCart => array
+        let cart = [];
+        //loop on keys of prodcustInCart
+        Object.keys(body.cart).forEach(key => {
+            let item = cartItems[key];
+            cart.push(item);
+        });
+        body.cart = cart;
         const order = await Order.create(body);
         res.status(200).send({ error: false, message: "Order Received" });
     }
