@@ -12,10 +12,11 @@ const cookieParser = require("cookie-parser");
 
 // const { requiredocAuth } = require("./Controllers/authMiddleware");
 
+
 const {login} = require("./Controllers/LoginController");
 const {createRestaurateur , deleteRes , getRes , getResById , updateRes} = require("./Controllers/ResController");
 const {createSupplier , deleteSupp , getSupp , getSuppById , updateSupp} = require("./Controllers/SuppController");
-const { createCatalogue, updateCat, getCat, deleteCat , getCatById } = require("./Controllers/CatController");
+const { createCatalogue, updateCat, getCat, deleteCat , getCatById, getProducts } = require("./Controllers/CatController");
 const { createShopCart, updateShopCart, getShopCartById, getShopCart, deleteShopCart } = require("./Controllers/ShopController");
 const { createOrder, updateOrder, getOrderById, getOrder, deleteOrder } = require("./Controllers/OrderController");
 const { createPay, updatePay, getPayById, getPay, deletePay } = require("./Controllers/PayController");
@@ -69,6 +70,7 @@ app.post('/Cat/update' , updateCat);
 app.get('/Cat/getById/:id' , getCatById);
 app.post('/Cat/get' , getCat);
 app.delete('/Cat/delete' , deleteCat);
+app.get('/products', getProducts);
 
 // for Shopping cart
 app.post('/Cart/create' , createShopCart);
