@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+
+    <title>Supply</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            background: #3b5d50 ;
+        }
+
+        .view-account {
+            background: #f9f9fb;
+            margin-top: 20px;
+        }
+
+        .view-account .pro-label {
+            font-size: 13px;
+            padding: 4px 5px;
+            position: relative;
+            top: -5px;
+            margin-left: 20px;
+            display: inline-block
+        }
+
+        .view-account .side-bar {
+            padding-bottom: 30px
+        }
+
+        .view-account .side-bar .user-info {
+            text-align: center;
+            margin-bottom: 15px;
+            padding: 30px;
+            color: #616670;
+            border-bottom: 1px solid #f3f3f3
+        }
+
+        .view-account .side-bar .user-info .img-profile {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 15px
+        }
+
+        .view-account .side-bar .user-info .meta li {
+            margin-bottom: 10px
+        }
+
+        .view-account .side-bar .user-info .meta li span {
+            display: inline-block;
+            width: 100px;
+            margin-right: 5px;
+            text-align: right
+        }
+
+        .view-account .side-bar .user-info .meta li a {
+            color: #616670
+        }
+
+        .view-account .side-bar .user-info .meta li.activity {
+            color: #a2a6af
+        }
+
+        .view-account .side-bar .side-menu {
+            text-align: center
+        }
+
+        .view-account .side-bar .side-menu .nav {
+            display: inline-block;
+            margin: 0 auto
+        }
+
+        .view-account .side-bar .side-menu .nav>li {
+            font-size: 14px;
+            margin-bottom: 0;
+            border-bottom: none;
+            display: inline-block;
+            float: none;
+            margin-right: 15px;
+            margin-bottom: 15px
+        }
+
+        .view-account .side-bar .side-menu .nav>li:last-child {
+            margin-right: 0
+        }
+
+        .view-account .side-bar .side-menu .nav>li>a {
+            display: inline-block;
+            color: #9499a3;
+            padding: 5px;
+            border-bottom: 2px solid transparent
+        }
+
+        .view-account .side-bar .side-menu .nav>li>a:hover {
+            color: #616670;
+            background: none
+        }
+
+        .view-account .side-bar .side-menu .nav>li.active a {
+            color: #40babd;
+            border-bottom: 2px solid #40babd;
+            background: none;
+            border-right: none
+        }
+
+        .theme-2 .view-account .side-bar .side-menu .nav>li.active a {
+            color: #6dbd63;
+            border-bottom-color: #6dbd63
+        }
+
+        .theme-3 .view-account .side-bar .side-menu .nav>li.active a {
+            color: #497cb1;
+            border-bottom-color: #497cb1
+        }
+
+        .theme-4 .view-account .side-bar .side-menu .nav>li.active a {
+            color: #ec6952;
+            border-bottom-color: #ec6952
+        }
+
+        .view-account .side-bar .side-menu .nav>li .icon {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 5px
+        }
+
+        .view-account .content-panel {
+            padding: 30px
+        }
+
+        .view-account .content-panel .title {
+            margin-bottom: 15px;
+            margin-top: 0;
+            font-size: 18px
+        }
+
+        .view-account .content-panel .fieldset-title {
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eaeaf1;
+            margin-bottom: 30px;
+            color: #616670;
+            font-size: 16px
+        }
+
+        .view-account .content-panel .avatar .figure img {
+            float: right;
+            width: 64px
+        }
+
+        .view-account .content-panel .content-header-wrapper {
+            position: relative;
+            margin-bottom: 30px
+        }
+
+        .view-account .content-panel .content-header-wrapper .actions {
+            position: absolute;
+            right: 0;
+            top: 0
+        }
+
+        .view-account .content-panel .content-utilities {
+            position: relative;
+            margin-bottom: 30px
+        }
+
+        .view-account .content-panel .content-utilities .btn-group {
+            margin-right: 5px;
+            margin-bottom: 15px
+        }
+
+        .view-account .content-panel .content-utilities .fa {
+            font-size: 16px;
+            margin-right: 0
+        }
+
+        .view-account .content-panel .content-utilities .page-nav {
+            position: absolute;
+            right: 0;
+            top: 0
+        }
+
+        .view-account .content-panel .content-utilities .page-nav .btn-group {
+            margin-bottom: 0
+        }
+
+        .view-account .content-panel .content-utilities .page-nav .indicator {
+            color: #a2a6af;
+            margin-right: 5px;
+            display: inline-block
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item {
+            position: relative;
+            padding: 10px;
+            border-bottom: 1px solid #f3f3f3;
+            color: #616670;
+            overflow: hidden
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item>div {
+            float: left
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .icheck {
+            background-color: #fff
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item:hover {
+            background: #f9f9fb
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item:nth-child(even) {
+            background: #fcfcfd
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item:nth-child(even):hover {
+            background: #f9f9fb
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item a {
+            color: #616670
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item a:hover {
+            color: #494d55;
+            text-decoration: none
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .checkbox-container,
+        .view-account .content-panel .mails-wrapper .mail-item .star-container {
+            display: inline-block;
+            margin-right: 5px
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .star-container .fa {
+            color: #a2a6af;
+            font-size: 16px;
+            vertical-align: middle
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .star-container .fa.fa-star {
+            color: #f2b542
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .star-container .fa:hover {
+            color: #868c97
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .mail-to {
+            display: inline-block;
+            margin-right: 5px;
+            min-width: 120px
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .mail-subject {
+            display: inline-block;
+            margin-right: 5px
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .mail-subject .label {
+            margin-right: 5px
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .mail-subject .label:last-child {
+            margin-right: 10px
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .mail-subject .label a,
+        .view-account .content-panel .mails-wrapper .mail-item .mail-subject .label a:hover {
+            color: #fff
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .mail-subject .label-color-1 {
+            background: #f77b6b
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .mail-subject .label-color-2 {
+            background: #58bbee
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .mail-subject .label-color-3 {
+            background: #f8a13f
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .mail-subject .label-color-4 {
+            background: #ea5395
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .mail-subject .label-color-5 {
+            background: #8a40a7
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .time-container {
+            display: inline-block;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            color: #a2a6af;
+            text-align: left
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .time-container .attachment-container {
+            display: inline-block;
+            color: #a2a6af;
+            margin-right: 5px
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .time-container .time {
+            display: inline-block;
+            text-align: right
+        }
+
+        .view-account .content-panel .mails-wrapper .mail-item .time-container .time.today {
+            font-weight: 700;
+            color: #494d55
+        }
+
+
+
+        .drive-wrapper {
+            padding: 15px;
+            background: #f5f5f5;
+            overflow: hidden
+            
+        }
+
+        .drive-wrapper .drive-item {
+            width: 130px;
+            margin-right: 15px;
+            display: inline-block;
+            float: none;
+
+        }
+
+        .drive-wrapper .drive-item:hover {
+            box-shadow: 0 1px 5px rgba(0, 0, 0, .1);
+            z-index: 1
+        }
+
+        .drive-wrapper .drive-item-inner {
+            padding: 15px
+            
+        }
+
+        .drive-wrapper .drive-item-title {
+            margin-bottom: 15px;
+            max-width: 100px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .drive-wrapper .drive-item-title a {
+            color: #494d55
+        }
+
+        .drive-wrapper .drive-item-title a:hover {
+            color: #40babd
+        }
+
+        .theme-2 .drive-wrapper .drive-item-title a:hover {
+            color: #6dbd63
+        }
+
+        .theme-3 .drive-wrapper .drive-item-title a:hover {
+            color: #497cb1
+        }
+
+        .theme-4 .drive-wrapper .drive-item-title a:hover {
+            color: #ec6952
+        }
+
+        .drive-wrapper .drive-item-thumb {
+            width: 100px;
+            height: 80px;
+            margin: 0 auto;
+            color: #616670
+        }
+
+        .drive-wrapper .drive-item-thumb a {
+            -webkit-opacity: .8;
+            -moz-opacity: .8;
+            opacity: .8
+        }
+
+        .drive-wrapper .drive-item-thumb a:hover {
+            -webkit-opacity: 1;
+            -moz-opacity: 1;
+            opacity: 1
+        }
+
+        .drive-wrapper .drive-item-thumb .fa {
+            display: inline-block;
+            font-size: 36px;
+            margin: 0 auto;
+            margin-top: 20px
+        }
+
+        .drive-wrapper .drive-item-footer .utilities {
+            margin-bottom: 0
+        }
+
+        .drive-wrapper .drive-item-footer .utilities li:last-child {
+            padding-right: 0
+        }
+
+        .drive-list-view .name {
+            width: 60%
+            
+        }
+        
+
+        .drive-list-view .name.truncate {
+            max-width: 100px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .drive-list-view .type {
+            width: 15px
+        }
+
+        .drive-list-view .date,
+        .drive-list-view .size {
+            max-width: 60px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .drive-list-view a {
+            color: #494d55
+        }
+
+        .drive-list-view a:hover {
+            color: #40babd
+        }
+
+        .theme-2 .drive-list-view a:hover {
+            color: #6dbd63
+        }
+
+        .theme-3 .drive-list-view a:hover {
+            color: #497cb1
+        }
+
+        .theme-4 .drive-list-view a:hover {
+            color: #ec6952
+        }
+
+        .drive-list-view td.date,
+        .drive-list-view td.size {
+            color: #a2a6af
+        }
+
+        @media (max-width:767px) {
+            .view-account .content-panel .title {
+                text-align: center;
+            }
+
+            
+
+            .view-account .content-panel .content-header-wrapper .actions {
+                position: static;
+                margin-bottom: 30px
+            }
+
+            .view-account .content-panel {
+                padding: 0
+            }
+
+            .view-account .content-panel .content-utilities .page-nav {
+                position: static;
+                margin-bottom: 15px
+            }
+            
+
+            .drive-wrapper .drive-item {
+                width: 100px;
+                margin-right: 5px;
+                float: none
+            }
+
+            .drive-wrapper .drive-item-thumb {
+                width: auto;
+                height: 54px
+            }
+
+            .drive-wrapper .drive-item-thumb .fa {
+                font-size: 24px;
+                padding-top: 0
+            }
+
+            .view-account .content-panel .avatar .figure img {
+                float: none;
+                margin-bottom: 15px
+            }
+
+            .view-account .file-uploader {
+                margin-bottom: 15px
+            }
+
+            .view-account .mail-subject {
+                max-width: 100px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis
+            }
+
+            .view-account .content-panel .mails-wrapper .mail-item .time-container {
+                position: static
+            }
+
+            .view-account .content-panel .mails-wrapper .mail-item .time-container .time {
+                width: auto;
+                text-align: left
+            }
+        }
+        .content-panel .title {
+    font-size: 64px; /* Increase the font size as needed */
+    font-weight: bold; /* Optional: Make the text bold */
+    color: #333; /* Optional: Change the color if desired */
+    margin-bottom: 15px; /* Keep the existing margin-bottom or adjust if needed */
+}
+
+/* Ensure the content-panel class maintains padding */
+.content-panel {
+    padding: 64px;
+}
+
+
+
+        body {
+  overflow-x: hidden;
+  position: relative; }
+
+a {
+  text-decoration: none;
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+  color: #ffffff;
+}
+  a:hover {
+    color: #ffffff;
+    text-decoration: none; }
+  a.more {
+    font-weight: 600; }
+    .custom-navbar {
+      background: #3b5d50 !important;
+      padding-top: 20px;
+      padding-bottom: 2px;
+    }
+    
+    .custom-navbar .navbar-brand {
+      font-size: 32px;
+      font-weight: 600;
+    }
+    
+    .custom-navbar .navbar-brand > span {
+      opacity: .4;
+    }
+    
+    .custom-navbar .navbar-toggler {
+      border-color: transparent;
+    }
+    
+    .custom-navbar .navbar-toggler:active,
+    .custom-navbar .navbar-toggler:focus {
+      box-shadow: none;
+      outline: none;
+    }
+    
+    @media (min-width: 992px) {
+      .custom-navbar .custom-navbar-nav li {
+        margin-left: 64px;
+        margin-right: 64px;
+        list-style: none;
+      }
+    }
+    
+    .custom-navbar .custom-navbar-nav li a {
+      font-weight: 500;
+      font-size: 18px;
+      color: #ffffff !important;
+      opacity: .5;
+      transition: .3s all ease;
+      position: relative;
+    }
+    
+    @media (min-width: 768px) {
+      .custom-navbar .custom-navbar-nav li a:hover:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 8px;
+        right: 8px;
+        background: #f9bf29;
+        height: 4px;
+        opacity: 1;
+        visibility: visible;
+        width: 0;
+        transition: .15s all ease-out;
+      }
+    }
+    
+    .custom-navbar .custom-navbar-nav li a:hover {
+      opacity: 1;
+    }
+    
+    .custom-navbar .custom-navbar-nav li a:hover:before {
+      width: calc(100% - 16px);
+    }
+    
+    .custom-navbar .custom-navbar-nav li a.active {
+      opacity: 1;
+    }
+    
+    .custom-navbar .custom-navbar-nav li a.active:before {
+      width: calc(100% - 16px);
+    }
+    
+    .custom-navbar .custom-navbar-cta {
+      margin-left: 0 !important;
+      display: flex;
+      align-items: center;
+    }
+    
+    @media (min-width: 768px) {
+      .custom-navbar .custom-navbar-cta {
+        margin-left: 40px !important;
+      }
+    }
+    
+    .custom-navbar .custom-navbar-cta li {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    
+    .custom-navbar .custom-navbar-cta li:first-child {
+      margin-right: 20px;
+    }
+    .nav-link {
+    /* Your styles for the navigation bar links here */
+    color: #ffffff !important; /* Example color */
+    font-weight: 500; /* Example font weight */
+    text-decoration: none; /* Remove underline */
+    transition: .3s all ease; /* Example transition */
+}
+.nav-link::before {
+    content: "                   "; /* Add a space to push the dot away */
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Styles for the copyright section */
+.copyright {
+  border-top: 2px solid #3b5d50; /* Add a border to the top */
+  padding-top: 1rem; /* Add some padding for spacing */
+}
+
+/* Styles for the copyright text */
+.copyright p {
+  margin-bottom: 0; /* Remove default bottom margin */
+  font-size: 0.8rem; /* Adjust font size as needed */
+  color: #ffffff;
+  
+}
+
+/* Styles for the copyright year */
+.copyright p a {
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Inherit color from parent element */
+}
+
+/* Centering the copyright text on smaller screens */
+@media (max-width: 991px) {
+  .copyright p {
+    text-align: center; /* Center text on small screens */
+  }
+}
+
+/* Styles for the list of links */
+.copyright ul {
+  list-style: none; /* Remove default bullet points */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+/* Styles for the list items */
+.copyright ul li {
+  display: inline-block; /* Make list items display inline */
+  margin-right: 1rem; /* Add margin between list items */
+}
+
+/* Styles for the links within the list */
+.copyright ul li a {
+  text-decoration: none; /* Remove underline from links */
+  color: #f4f3f3; /* Set link color */
+  transition: color 0.3s ease; /* Add hover effect */
+}
+
+/* Hover effect for the links */
+.copyright ul li a:hover {
+  color: #f4f3f3    ; /* Change link color on hover */
+}
+
+/* Right-aligning the links on larger screens */
+@media (min-width: 992px) {
+  .copyright ul {
+    justify-content: flex-end; /* Right-align the list */
+  }
+}
+
+ul {
+  list-style-type: square; /* Set square bullet style */
+  padding: 0; /* Remove default padding */
+}
+
+li {
+  margin-bottom: 10px; /* Add space between list items */
+}
+
+
+    </style>
+</head>
+
+<body>
+    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Supplify</a>
+
+            
+
+            <div class="collapse navbar-collapse" id="navbarsFurni">
+                <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                   
+                    <li><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li><a class="nav-link" href="about.html">About us</a></li>
+                    <li><a class="nav-link" href="services.html">Services</a></li>
+                    <li><a class="nav-link" href="blog.html">Blog</a></li>
+                    
+                </ul>
+
+               
+            </div>
+        </div>
+            
+    </nav>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="container">
+        <div class="view-account">
+            <section class="module">
+                <div class="module-inner">
+                    <div class="content-panel" >
+                        <h2 class="title">Supplier Product Entry</h2>
+                        <form class="form-horizontal">
+                            <fieldset class="fieldset" id="catalogue-form">
+                                <h3 class="fieldset-title">Product information</h3>
+                                <div class="form-group avatar">
+                                    <figure class="figure col-md-2 col-sm-3 col-xs-12">
+                                        <img class="img-rounded img-responsive"
+                                            src="https://bootdey.com/img/Content/avatar/avatar1.png" alt>
+                                    </figure>
+                                    <div class="form-inline col-md-10 col-sm-9 col-xs-12">
+                                        <input type="file" class="file-uploader pull-left">
+                                        <button type="submit" class="btn btn-sm btn-default-alt pull-left">Update
+                                            Image</button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 col-sm-3 col-xs-12 control-label">Product Name</label>
+                                  
+                                    <div class="col-md-10 col-sm-9 col-xs-12">
+                                        <input id="product_name" type="text" class="form-control" value="e.g. Organic Red Apples"> 
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 col-sm-3 col-xs-12 control-label">Product Description</label>
+                                    <div class="col-md-10 col-sm-9 col-xs-12">
+                                        <textarea id="product_description" class="form-control" placeholder=" These organic Red Delicious apples are hand-picked at the peak of ripeness, bursting with juicy sweetness and a refreshing crunch. Grown without synthetic pesticides or fertilizers, they're a guilt-free snack packed with essential vitamins and fiber. Perfect for a healthy lunchbox addition, a post-workout pick-me-up, or simply a delightful on-the-go treat."></textarea>
+                                        <span id="word-count" class="text-muted" ></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 col-sm-3 col-xs-12 control-label">Product Type</label>
+                                    <div class="col-md-10 col-sm-9 col-xs-12">
+                                        <select id="product_types" name="product_types" class="drop-down">
+                                            <option value="meat">Meat</option>
+                                            <option value="chick">Chicken</option>
+                                            <option value="fish">Fish</option>
+                                            <option value="dairy">Dairy Product</option>
+                                            <option value="leg&grain">Legumes/Grains</option>
+                                            <option value="nut">Nuts</option>
+                                            <option value="f&V">Fruit/Vegetable</option>
+                                            <option value="oil&vineg">Oil/Vinegar</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2  col-sm-3 col-xs-12 control-label">Price</label>
+                                    <div class="col-md-10 col-sm-9 col-xs-12">
+                                        <input id="price" type="number" class="form-control" value="e.g. 350">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2  col-sm-3 col-xs-12 control-label">Weight</label>
+                                    <div class="col-md-10 col-sm-9 col-xs-12">
+                                        <input id="weight" type="number" class="form-control" value="e.g. 2.5 kg">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2  col-sm-3 col-xs-12 control-label">Quantity</label>
+                                    <div class="col-md-10 col-sm-9 col-xs-12">
+                                        <input type="number" id="quantity" class="form-control" value="e.g. 2.5 kg">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2  col-sm-3 col-xs-12 control-label">Production Date</label>
+                                    <div class="col-md-10 col-sm-9 col-xs-12">
+                                        <input id="production_date" type="date" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2  col-sm-3 col-xs-12 control-label">Expiry Date</label>
+                                    <div class="col-md-10 col-sm-9 col-xs-12">
+                                        <input id="expiry_date" type="date" class="form-control">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <hr>
+                            <div class="form-group">
+                                <div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
+                                    <input class="btn btn-primary" type="button" onclick="postCatalogueData()" value="Add product">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="border-top copyright">
+        <div class="row pt-4">
+            <div class="col-lg-6">
+                <p class="mb-2 text-center text-lg-start">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. </a>  <!-- License information: https://untree.co/license/ -->
+</p>
+            </div>
+
+            <div class="col-lg-6 text-center text-lg-end">
+                <ul class="list-unstyled d-inline-flex ms-auto">
+                    <li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript"></script>
+    <script src="./js/CatalogueApi.js"></script>
+    <script>
+        // Get the product description textarea and word count element
+        const productDesc = document.getElementById('product_description');
+        const wordCountElement = document.getElementById('word-count');
+        
+        // Function to update word count and validate character limit
+        function updateWordCount() {
+          const charCount = productDesc.value.length; // Get character count directly
+          wordCountElement.textContent = `${charCount} characters`; // Update word count
+        
+          // Check if character count exceeds limit
+          if (charCount > 350) {
+            productDesc.classList.add('is-invalid'); // Add Bootstrap class for invalid input (optional)
+            wordCountElement.classList.add('text-danger'); // Add Bootstrap class for red text (optional)
+          } else {
+            productDesc.classList.remove('is-invalid');
+            wordCountElement.classList.remove('text-danger');
+          }
+        }
+        
+        // Update word count and validation on input change
+        productDesc.addEventListener('input', updateWordCount);
+        
+        // Update word count on page load (optional, in case there's pre-filled text)
+        updateWordCount();
+        </script>
+
+
+
+
+</body>
+
+</html>
