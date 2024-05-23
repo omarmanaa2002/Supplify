@@ -12,6 +12,7 @@ const cookieParser = require("cookie-parser");
 
 // const { requiredocAuth } = require("./Controllers/authMiddleware");
 
+
 const {login} = require("./Controllers/LoginController");
 const {createRestaurateur , deleteRes , getRes , getResById , updateRes} = require("./Controllers/ResController");
 const {createSupplier , deleteSupp , getSupp , getSuppById , updateSupp} = require("./Controllers/SuppController");
