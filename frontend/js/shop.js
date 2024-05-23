@@ -1,4 +1,6 @@
-let products = [];
+let products = [
+    
+];
 
 for(let i of products){
    //create cards
