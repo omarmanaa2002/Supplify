@@ -15,7 +15,7 @@ const OrderSchema = new Schema({
     //     type: String,
     // },
     cart : {
-        type: [Catalogue]
+        type: [Schema.Types.ObjectId]
     }
 
 });

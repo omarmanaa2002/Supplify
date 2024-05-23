@@ -233,7 +233,7 @@ function displayCart() {
       let item = cartItems[key];
       productcon.innerHTML += `
         <div class="product">
-          <button class="cartcl" onclick="removeItem('${key}')">x</button>
+          <button class="cartcl" onclick="decrement('${key}')">x</button>
           <img class="imgcart" src="${item.image}">
           <span>${item.productName}</span>
         </div>
@@ -299,6 +299,10 @@ function decrement(key) {
     localStorage.setItem("productsInCart", JSON.stringify(cartItems));
     displayCart();
   }
+}
+
+function navigateCheckout(){
+  window.location.href = 'checkout.html'
 }
 
 displayCart();

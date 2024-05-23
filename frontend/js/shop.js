@@ -11,9 +11,10 @@ async function getProducts() {
         const data = await response.json()
         products = data.result;
         console.log(data.result);
-        for (prod in products) {
-            prod.quantity = 1;  
+        for (i in products) {
+            products[i].quantity = 1;  
         }
+        console.log(products[2].quantity)
     }
 
     catch {

@@ -80,7 +80,7 @@ app.post('/Cart/get' , getShopCart);
 app.delete('/Cart/delete' , deleteShopCart);
 
 // for Order
-app.post('/Order/create' , createOrder);
+app.post('/order/create' , createOrder);
 app.post('/Order/update' , updateOrder);
 app.get('/Order/getById/:id' , getOrderById);
 app.post('/Order/get' , getOrder);

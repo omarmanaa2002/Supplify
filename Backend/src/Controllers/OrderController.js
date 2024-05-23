@@ -9,10 +9,11 @@ const createOrder = async (req, res) => {
         let cart = [];
         //loop on keys of prodcustInCart
         Object.keys(body.cart).forEach(key => {
-            let item = cartItems[key];
-            cart.push(item);
+            let item = body.cart[key];
+            cart.push(item._id);
         });
         body.cart = cart;
+        console.log(cart);
         const order = await Order.create(body);
         res.status(200).send({ error: false, message: "Order Received" });
     }
