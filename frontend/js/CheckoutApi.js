@@ -49,8 +49,11 @@ async function addOrder() {
     if (data.error) {
       console.log("Error occurred while placing order");
     }
-    else{
-      window.location.href = 'thankyou.html'; 
+    else {
+      const price = localStorage.removeItem('total cost');
+      const prods = localStorage.removeItem('productsInCart');
+      const itemsCount = localStorage.removeItem('cartNumbers');
+      window.location.href = 'thankyou.html';
     }
   }
   catch {

@@ -1,7 +1,7 @@
 const baseUrl = `http://localhost:8000`
 
 async function login() {
-
+    localStorage.clear();
     const body = {
         email: document.getElementById("email").value,
         password: document.getElementById("password").value

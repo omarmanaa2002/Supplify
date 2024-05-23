@@ -226,7 +226,7 @@ function displayCart() {
   let cartItems = JSON.parse(localStorage.getItem("productsInCart"));
   let productcon = document.querySelector(".products1");
   let cartCost = localStorage.getItem('total cost');
-  
+
   if (cartItems && productcon) {
     productcon.innerHTML = '';
     Object.keys(cartItems).forEach(key => {
@@ -270,7 +270,7 @@ function removeItem(key) {
   let cartItems = JSON.parse(localStorage.getItem("productsInCart"));
   let removedItem = cartItems[key];
   delete cartItems[key];
-  
+
   updateTotalCost(-removedItem.price * removedItem.quantity);
   updateCartNumbers(-removedItem.quantity);
   localStorage.setItem("productsInCart", JSON.stringify(cartItems));
@@ -280,7 +280,7 @@ function removeItem(key) {
 function increment(key) {
   let cartItems = JSON.parse(localStorage.getItem("productsInCart"));
   cartItems[key].quantity++;
-  
+
   updateTotalCost(cartItems[key].price);
   updateCartNumbers(1);
   localStorage.setItem("productsInCart", JSON.stringify(cartItems));
@@ -293,7 +293,7 @@ function decrement(key) {
     removeItem(key);
   } else {
     cartItems[key].quantity--;
-    
+
     updateTotalCost(-cartItems[key].price);
     updateCartNumbers(-1);
     localStorage.setItem("productsInCart", JSON.stringify(cartItems));
@@ -301,8 +301,13 @@ function decrement(key) {
   }
 }
 
-function navigateCheckout(){
-  window.location.href = 'checkout.html'
+function navigateCheckout() {
+  let cartItems = JSON.parse(localStorage.getItem("productsInCart"));
+
+  if (cartItems) {
+    window.location.href = 'checkout.html'
+
+  }
 }
 
 displayCart();
