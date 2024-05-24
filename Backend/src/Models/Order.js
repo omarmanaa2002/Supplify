@@ -8,15 +8,33 @@ const OrderSchema = new Schema({
     totalprice: {
         type:  Number,
     },
-     //date: {
-     //type: Date,
-     //},
+    time: {
+    type: String,
+     },
 
-    //shippingaddress: {
-      //   type: String,
-     //},
+    shippingaddress: {
+         type: String,
+     },
     cart : {
         type: [Schema.Types.ObjectId]
+    },
+    Companyname:{
+        type: String
+    },
+     Provinces:{
+        type: String
+    },
+    Postalzip:{
+        type: String
+    },
+    Email:{
+        type: String
+    },
+    Phone:{
+        type: String
+    },
+    ordernote:{
+        type: String
     }
 
 });
