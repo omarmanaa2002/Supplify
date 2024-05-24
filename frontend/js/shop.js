@@ -56,6 +56,26 @@ window.onload = async () => {
         name.innerText = i.name.toUpperCase();
         container.appendChild(name);
 
+        let descrip = document.createElement("p");
+        descrip.classList.add("product-descrip");
+        descrip.innerText = i.descrip
+        container.appendChild(descrip);
+
+        let weight = document.createElement("p");
+        weight.classList.add("weight");
+        weight.innerText = i.weight +"kg"
+        container.appendChild(weight);
+
+        let proddate = document.createElement("p");
+        proddate.classList.add("product-date");
+        proddate.innerText = "product date " + i.proddate
+        container.appendChild(proddate);
+
+        let expdate = document.createElement("p");
+        expdate.classList.add("product-expdate");
+        expdate.innerText = "expire date " + i.expdate
+        container.appendChild(expdate);
+
         //prices
         let price = document.createElement("h6");
         price.innerText = "e£" + i.price;
