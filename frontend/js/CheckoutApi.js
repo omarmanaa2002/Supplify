@@ -33,29 +33,7 @@ async function addOrder() {
 
 
 
-  function validateCvv(cvv) {
-    // Check if the cvv contains only numbers and is between 3 and 4 digits long
-    if (!/^\d{3,4}$/.test(cvv)) {
-      return false;
-    }
-    
-    // If the format is correct, return true
-    return true;
-  }
-
-
-
-
-  function validateCardNumber(cardNum) {
-    // Check if the card number contains only numbers and is 16 digits long
-    if (!/^\d{16}$/.test(cardNum)) {
-      return false;
-    }
-    
-    // If the format is correct, return true
-    return true;
-  }
-
+ 
 
   function validateEmail(email) {
     // Regular expression for validating email format
@@ -134,12 +112,11 @@ function validatePostalCode(postal) {
   const postalInput = document.getElementById("c_postal").value; 
   const phoneInput = document.getElementById("c_phone").value; 
   const ordernote = document.getElementById("c_notes").value; 
-  const cardNum = document.getElementById("cardnum").value; 
-  const cvv = document.getElementById("cvv").value; 
+
   const pricee = (price * 1.04).toFixed(2);
 
    // Check if addressInput is empty
-   if (!addressInput || !comnameInput || !provincesInput || !emailInput || !postalInput || !phoneInput || !cardNum || !cvv) {
+   if (!addressInput || !comnameInput || !provincesInput || !emailInput || !postalInput || !phoneInput ) {
     console.error('empty field');
     alert('Please complete every field.');
     return; // Stop execution of the function
@@ -162,15 +139,7 @@ function validatePostalCode(postal) {
   }
 
 
-  if (!validateCardNumber(cardNum)) {
-    alert('Please enter a valid 16-digit card number containing only numbers.');
-    return; // Stop execution of the function
-  }
-
-  if (!validateCvv(cvv)) {
-    alert('Please enter a valid 3 to 4-digit cvv containing only numbers.');
-    return; // Stop execution of the function
-  }
+ 
   
   const body = {
     cart: prods,
@@ -184,8 +153,7 @@ function validatePostalCode(postal) {
     Email: emailInput,
     Phone: phoneInput,
     ordernote: ordernote,
-    cardnum: cardNum,
-    cvv: cvv
+    
   }
   try {
     const response = await fetch(`${baseUrl}/order/create`, {

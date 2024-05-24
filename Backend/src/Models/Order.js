@@ -35,12 +35,6 @@ const OrderSchema = new Schema({
     },
     ordernote:{
         type: String
-    },
-    cardnum:{
-        type: String
-    },
-    cvv:{
-        type: String
     }
 
 });
