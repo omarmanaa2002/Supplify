@@ -59,39 +59,30 @@ inputElement.addEventListener("blur", e => {
 function otherSelect() {
     var other = document.getElementById("lic");
     var other1 = document.getElementById("bnk");
-    var other2 = document.getElementById("gen");
-    var other3 = document.getElementById("age");
+   
     var other4 = document.getElementById("pyt1");
-    var other5 = document.getElementById("pyt2");
-    var other6 = document.getElementById("pyt3");
+ 
     var other7 = document.getElementById("add1");
-    var other8 = document.getElementById("add2");
-    var other9 = document.getElementById("add3");
+
     var other10 = document.getElementById("Clic");
     if (document.forms[1].AccountType.options[document.forms[1].AccountType.selectedIndex].value == "1") {
     other.style.display = "block";
     other1.style.display = "block";
-    other2.style.display = "none";
-    other3.style.display = "none";
+   
     other4.style.display = "none";
-    other5.style.display = "none";
-    other6.style.display = "none";
+   
     other7.style.display = "none";
-    other8.style.display = "none";
-    other9.style.display = "none";
+   
     other10.style.display = "none";
     }
     else {
     other.style.display = "none";
     other1.style.display = "none";
-    other2.style.display = "block";
-    other3.style.display = "block";
+ 
     other4.style.display = "block";
-    other5.style.display = "block";
-    other6.style.display = "block";
+   
     other7.style.display = "block";
-    other8.style.display = "block";
-    other9.style.display = "block";
+ 
     other10.style.display = "block";
     }
     }

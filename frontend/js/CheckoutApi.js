@@ -31,6 +31,62 @@ function displayCart() {
 
 async function addOrder() {
 
+
+
+
+
+
+
+
+  function validateEmail(email) {
+    // Regular expression for validating email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    // Check if the email matches the regular expression
+    if (!emailRegex.test(email)) {
+      return false;
+    }
+    
+    // If the format is correct, return true
+    return true;
+  }
+
+
+
+
+
+
+  
+
+
+function validatePostalCode(postal) {
+  
+  if (!/^\d+$/.test(postal)) {
+    return false;
+  }
+  
+  // If the format is correct, return true
+  return true;
+}
+
+  function validatePhoneNumber(phone) {
+    // Remove any non-numeric characters from the phone number
+    const cleaned = phone.replace(/\D/g, '');
+    
+  
+    if (cleaned.length !== 11) {
+      return false;
+    }
+    
+    // If the length is correct, return true
+    return true;
+  }
+
+
+
+
+
+  
 // Function to get current time in 12-hour clock format
   function getCurrentTime12HourFormat() {
     const now = new Date();
@@ -43,6 +99,7 @@ async function addOrder() {
     const currentTime = hours + ':' + minutes + ' ' + ampm;
     return currentTime;
   }
+
 
 
   const date = getCurrentTime12HourFormat();
@@ -63,10 +120,25 @@ async function addOrder() {
    // Check if addressInput is empty
    if (!addressInput || !comnameInput || !provincesInput || !emailInput || !postalInput || !phoneInput) {
     console.error('empty field');
-    
+    alert('Please complete every field.');
     return; // Stop execution of the function
   }
 
+  if (!validatePhoneNumber(phoneInput)) {
+    console.error('Invalid phone number format');
+    alert('Please enter a valid phone number with 11 digits.');
+    return; // Stop execution of the function
+  }
+
+  if (!validatePostalCode(postalInput)) {
+    alert('Please enter a valid postal code containing only numbers.');
+    return;
+  }
+
+  if (!validateEmail(emailInput)) {
+    alert('Please enter a valid email address.');
+    return; // Stop execution of the function
+  }
   
   const body = {
     cart: prods,

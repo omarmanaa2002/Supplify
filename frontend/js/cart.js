@@ -249,7 +249,7 @@ function displayCart() {
 
     productcon.innerHTML += `<div class="totalCon">
                                <h4 class="totalTil">Total price</h4>
-                               <h4 class="Btotal">£${cartCost},00</h4>
+                               <h4 class="Btotal">£${cartCost}</h4>
                              </div>`;
   }
 }
