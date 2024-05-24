@@ -1,5 +1,3 @@
-const { base } = require("../../Backend/src/Models/Supplier");
-
 const baseUrl = `http://localhost:8000`
 
 async function signUp() {
@@ -12,7 +10,7 @@ async function signUp() {
     let businessLicense = document.getElementById('businessLicense').value;
 
     if (userType == '1') {
-        
+
         try {
             let bankAccount = document.getElementById('bankAccount').value;
 
