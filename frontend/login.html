@@ -133,9 +133,7 @@
 					</div class="form__input-error-message">
 
 <!--sup stuff-->
-						<div class="form__input-group " id="lic"  style="display: none;" >
-							<input type="text" class="form__input" placeholder="license"></div>
-							<div class="form__input-error-message"></div>
+			
 
 							<div class="form__input-group " id="bnk"  style="display: none;" >
 								<input type="text" class="form__input" placeholder="Account Number"></div>
@@ -157,9 +155,15 @@
 										
 										<!--customer lic-->
 
-										<div class="form__input-group " id="Clic"  >
-											<input type="text" class="form__input" placeholder="license"></div>
-											<div class="form__input-error-message"></div>
+										
+
+											
+											<div>
+												<input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;" >
+												<label for="file" style="cursor: pointer;" class="form__input"  id="lic">license Image</label>
+												<img id="output" width="200" />
+											</div>
+
 <!--end cus stuff-->
 <!--no more changing inputs-->
                     <div class="form__input-group">

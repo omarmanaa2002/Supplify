@@ -57,7 +57,7 @@ inputElement.addEventListener("blur", e => {
 });
 //lic hide and show
 function otherSelect() {
-    var other = document.getElementById("lic");
+
     var other1 = document.getElementById("bnk");
    
     var other4 = document.getElementById("pyt1");
@@ -66,7 +66,7 @@ function otherSelect() {
 
     var other10 = document.getElementById("Clic");
     if (document.forms[1].AccountType.options[document.forms[1].AccountType.selectedIndex].value == "1") {
-    other.style.display = "block";
+
     other1.style.display = "block";
    
     other4.style.display = "none";
@@ -76,7 +76,7 @@ function otherSelect() {
     other10.style.display = "none";
     }
     else {
-    other.style.display = "none";
+  
     other1.style.display = "none";
  
     other4.style.display = "block";
