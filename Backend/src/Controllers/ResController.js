@@ -10,7 +10,7 @@ const createRestaurateur = async (req, res) => {
             return res.status(200).send({ error: true, message: "Email Already exists" });
         }
         const user = await Restaurateur.create(body);
-        res.status(200).send({ error: false, message: "User Created" });
+        res.status(200).send({ error: false, message: "User Created", result : user });
     }
 
     catch (err) {
