@@ -73,7 +73,7 @@ async function signUp() {
                     },
                     phone: phone,
                     address: address,
-                    userType: userType,
+                    userType: "customer",
                     paymentCardNumber: card,
                     businessLicense: businessLicense
                 })
