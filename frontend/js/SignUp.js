@@ -12,7 +12,6 @@ async function signUp() {
     let businessLicense = document.getElementById('businessLicense').value;
 
     if (userType == '1') {
-
         try {
             let bankAccount = document.getElementById('bankAccount').value;
 
