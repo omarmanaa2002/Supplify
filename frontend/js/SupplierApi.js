@@ -24,7 +24,7 @@ async function getSupp() {
 }
 
 window.onload = async () => {
-  await getCons();
+  await getSupp();
 }
 
 

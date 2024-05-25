@@ -55,7 +55,7 @@ const updateRes = async (req,res) =>
         const params = req.params;
         const body = req.body
         const restaurateur = await Restaurateur.findByIdAndUpdate(params.id , body);
-        return res.status(200).send({error : false , message : "Deleted Successfully"});
+        return res.status(200).send({error : false , message : "Updated Successfully" , result : restaurateur});
     }
 
     catch (err)

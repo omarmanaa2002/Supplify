@@ -1,193 +1,212 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Untree.co">
-  <link rel="shortcut icon" href="favicon.png">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Untree.co">
+	<link rel="shortcut icon" href="favicon.png">
 
-  <meta name="description" content="" />
-  <meta name="keywords" content="bootstrap, bootstrap4" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="bootstrap, bootstrap4" />
 
-		<!-- Bootstrap CSS -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-		<link href="css/tiny-slider.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
-        <link href="css/login.css" rel="stylesheet">
-		<title>Supplify</title>
-	</head>
+	<!-- Bootstrap CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link href="css/tiny-slider.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/login.css" rel="stylesheet">
+	<title>Supplify</title>
+</head>
 
-	<body>
+<body>
 
-		<!-- Start Header/Navigation -->
-		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+	<!-- Start Header/Navigation -->
+	<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
-			<div class="container">
-				<a class="navbar-brand" href="index.html">Supplify<span>.</span></a>
+		<!-- <div class="container">
+			<a class="navbar-brand" href="index.html">Supplify<span>.</span></a>
 
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
+				aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-				<div class="collapse navbar-collapse" id="navbarsFurni">
-					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<li class="nav-item">
-							<a class="nav-link" href="index.html">Home</a>
-						</li>
-						<li><a class="nav-link" href="shop.html">Shop</a></li>
-						<li><a class="nav-link" href="about.html">About us</a></li>
-						<li><a class="nav-link" href="services.html">Services</a></li>
-						<li><a class="nav-link" onclick="navigateProfile()">Profile</a></li>
-					</ul>
+			<div class="collapse navbar-collapse" id="navbarsFurni">
+				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li><a class="nav-link" href="shop.html">Shop</a></li>
+					<li><a class="nav-link" href="about.html">About us</a></li>
+					<li id="supply" style="cursor: pointer;" onclick="navigateSupply()"><a class="nav-link">Supply</a>
+					</li>
 
-					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-						<li><a class="nav-link" onclick="logout()"><img src="images/user.svg"></a></li>
-						<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
-					</ul>
-				</div>
+
+					<li><a class="nav-link" onclick="navigateProfile()">Profile</a></li>
+				</ul>
+
+				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+					<li><a class="nav-link" onclick="logout()"><img src="images/user.svg"></a></li>
+					<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+				</ul>
 			</div>
-				
-		</nav>
-		<!-- End Header/Navigation -->
-        <!-- Start Hero Section -->
-			<div class="hero">
-				<div class="container">
-					<div class="row justify-content-between">
-						<div class="col-lg-5">
-							<div class="intro-excerpt">
-								<h1>Revolutionize your restaurant<span clsas="d-block"> with Supplify </span></h1>
-								<p class="mb-4">where quality meets convenience.</p>
-								<p><a href="shop.html" class="btn btn-secondary me-2">Shop Now</a><a href="about.html" class="btn btn-white-outline">Explore</a></p>
-							</div>
-						</div>
-						<div class="col-lg-7">
-							<div class="hero-img-wrap">
-								<img src="images/basket2.png" class="img-fluid">
-							</div>
-						</div>
+		</div> -->
+
+	</nav>
+	<!-- End Header/Navigation -->
+	<!-- Start Hero Section -->
+	<div class="hero">
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="col-lg-5">
+					<div class="intro-excerpt">
+						<h1>Revolutionize your restaurant<span clsas="d-block"> with Supplify </span></h1>
+						<p class="mb-4">where quality meets convenience.</p>
+						<p><a href="shop.html" class="btn btn-secondary me-2">Shop Now</a><a href="about.html"
+								class="btn btn-white-outline">Explore</a></p>
+					</div>
+				</div>
+				<div class="col-lg-7">
+					<div class="hero-img-wrap">
+						<img src="images/basket2.png" class="img-fluid">
 					</div>
 				</div>
 			</div>
-		<!-- End Hero Section -->
+		</div>
+	</div>
+	<!-- End Hero Section -->
 
-        <!-- login section-->
+	<!-- login section-->
 
-        <div class="container0">
-            <form class="form " id="login">
-                <h1 class="form__title">Login</h1>
-                <div class="form__message form__message--error"></div>
-                <div class="form__input-group">
-                    <input type="text" id="email" class="form__input" autofocus placeholder="Email"></div>
-                    <div class="form__input-error-message"></div>
-                    <div class="form__input-group">
-                        <input id="password" type="password" class="form__input" autofocus placeholder="Password"></div>
-                        <div class="form__input-error-message"></div>
-                        <button class="form__button" onclick="login()" type="button">Continue</button>
-                        
-                        
-                        <p class="form__text">
-                            <a class="form__link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
-                        </p>
-            </form>
-       
-
-         <!-- end login section-->
-         <!--signup section -->
-         
-            <form class="form form--hidden" id="CreateAccount">
-                <h1 class="form__title">Create Account</h1>
-                <div class="form__message form__message--error"></div>
- 
-                    <div class="form__input-group">
-                        <input id="regEmail" type="email" class="form__input" autofocus placeholder="Email Address"></div>
-                        <div class="form__input-error-message"></div>
+	<div class="container0">
+		<form class="form " id="login">
+			<h1 class="form__title">Login</h1>
+			<div class="form__message form__message--error"></div>
+			<div class="form__input-group">
+				<input type="text" id="email" class="form__input" autofocus placeholder="Email">
+			</div>
+			<div class="form__input-error-message"></div>
+			<div class="form__input-group">
+				<input id="password" type="password" class="form__input" autofocus placeholder="Password">
+			</div>
+			<div class="form__input-error-message"></div>
+			<button class="form__button" onclick="login()" type="button">Continue</button>
 
 
-						<div class="form__input-group">
-							<input id="fname" type="text" class="form__input" placeholder="First Name"></div>
-							<div class="form__input-error-message"></div>
+			<p class="form__text">
+				<a class="form__link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
+			</p>
+		</form>
 
-							<div class="form__input-group">
-								<input id="lname" type="text" class="form__input" placeholder="Last name"></div>
-								<div class="form__input-error-message"></div>
 
-								<div class="form__input-group">
-									<input id="phone" type="text" class="form__input" placeholder="Phone number"></div>
-									<div class="form__input-error-message"></div>
-<!--changing inputs -->
-                    <div class="form__input-group">
-						<select name="AccountType" id="type"  class="form__input" onchange="otherSelect()">
+		<!-- end login section-->
+		<!--signup section -->
 
-							<option id="cus" value="0">Customer</option>
-							<option id="sup" value="1">Supplier</option>
-						</select>
-					</div class="form__input-error-message">
+		<form class="form form--hidden" id="CreateAccount">
+			<h1 class="form__title">Create Account</h1>
+			<div class="form__message form__message--error"></div>
 
-<!--sup stuff-->
-			
+			<div class="form__input-group">
+				<input id="regEmail" type="email" class="form__input" autofocus placeholder="Email Address">
+			</div>
+			<div class="form__input-error-message"></div>
 
-							<div class="form__input-group " id="bnk"  style="display: none;" >
-								<input id="bankAccount" type="text" class="form__input" placeholder="Account Number"></div>
-								<div class="form__input-error-message"></div>
-<!--end sup stuff-->
-<!--cus stuff-->
-								
 
-										<!--payment-->
-										<div class="form__input-group " id="pyt1"  >
-											<input id="cardNumber" type="text" class="form__input" placeholder="card number"></div>
-											<div class="form__input-error-message"></div>		
-										
-										<!--address-->
-										<div class="form__input-group " id="add1"  >
-											<input id="address" type="text" class="form__input" placeholder="address"></div>
-											<div class="form__input-error-message"></div>		
-										
-										
-										<!--customer lic-->
+			<div class="form__input-group">
+				<input id="fname" type="text" class="form__input" placeholder="First Name">
+			</div>
+			<div class="form__input-error-message"></div>
 
-										
+			<div class="form__input-group">
+				<input id="lname" type="text" class="form__input" placeholder="Last name">
+			</div>
+			<div class="form__input-error-message"></div>
 
-											
-											<!-- <div>
+			<div class="form__input-group">
+				<input id="phone" type="text" class="form__input" placeholder="Phone number">
+			</div>
+			<div class="form__input-error-message"></div>
+			<!--changing inputs -->
+			<div class="form__input-group">
+				<select name="AccountType" id="type" class="form__input" onchange="otherSelect()">
+
+					<option id="cus" value="0">Customer</option>
+					<option id="sup" value="1">Supplier</option>
+				</select>
+			</div class="form__input-error-message">
+
+			<!--sup stuff-->
+
+
+			<div class="form__input-group " id="bnk" style="display: none;">
+				<input id="bankAccount" type="text" class="form__input" placeholder="Account Number">
+			</div>
+			<div class="form__input-error-message"></div>
+			<!--end sup stuff-->
+			<!--cus stuff-->
+
+
+			<!--payment-->
+			<div class="form__input-group " id="pyt1">
+				<input id="cardNumber" type="text" class="form__input" placeholder="card number">
+			</div>
+			<div class="form__input-error-message"></div>
+
+			<!--address-->
+			<div class="form__input-group " id="add1">
+				<input id="address" type="text" class="form__input" placeholder="address">
+			</div>
+			<div class="form__input-error-message"></div>
+
+
+			<!--customer lic-->
+
+
+
+
+			<!-- <div>
 												<input id="businessLicense" type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;" >
 												<label for="file" style="cursor: pointer;" class="form__input"  id="lic">license Image</label>
 												<img id="output" width="200" />
 											</div> -->
 
-<!--end cus stuff-->
-<!--no more changing inputs-->
-                    <div class="form__input-group">
-                        <input id="registerPassword" type="password" class="form__input" autofocus placeholder="Password"></div>
-                        <div class="form__input-error-message"></div>
+			<!--end cus stuff-->
+			<!--no more changing inputs-->
+			<div class="form__input-group">
+				<input id="registerPassword" type="password" class="form__input" autofocus placeholder="Password">
+			</div>
+			<div class="form__input-error-message"></div>
 
-                        <div class="form__input-group">
-                            <input id="registerPassword2" type="password" class="form__input" autofocus placeholder="Confirm Password"></div>
-                            <div class="form__input-error-message"></div>
+			<div class="form__input-group">
+				<input id="registerPassword2" type="password" class="form__input" autofocus
+					placeholder="Confirm Password">
+			</div>
+			<div class="form__input-error-message"></div>
 
-                        <button onclick="signUp()" class="form__button" type="button">Continue</button>
-                        
-                       
-                        <p class="form__text">
-                            <a class="form__link" href="./" id="linklogin">Already have an account? Sign in</a>
-                        </p>
-            </form>
-        </div>
-         <!--end signup section-->
-			<!--start footer-->
+			<button onclick="signUp()" class="form__button" type="button">Continue</button>
+
+
+			<p class="form__text">
+				<a class="form__link" href="./" id="linklogin">Already have an account? Sign in</a>
+			</p>
+		</form>
+	</div>
+	<!--end signup section-->
+	<!--start footer-->
 	<footer class="footer-section">
 		<div class="container relative">
 
 			<div class="sofa-img">
-				<img src="images/wagyu.png" style="max-width: 300px;"alt="Image" class="img-fluid">
+				<img src="images/wagyu.png" style="max-width: 300px;" alt="Image" class="img-fluid">
 			</div>
 
-			
+
 
 			<div class="row g-5 mb-5">
 				<div class="col-lg-4">
-					<div class="mb-4 footer-logo-wrap"><a href="index.html" class="footer-logo">Supplify<span>.</span></a>
+					<div class="mb-4 footer-logo-wrap"><a href="index.html"
+							class="footer-logo">Supplify<span>.</span></a>
 					</div>
 					<p class="mb-4">We're committed to providing restaurants with the safest, freshest ingredients.
 					</p>
@@ -205,7 +224,10 @@
 						<div class="col-6 col-sm-6 col-md-3">
 							<ul class="list-unstyled">
 								<li><a href="about.html">About us</a></li>
-								<li><a href="services.html">Services</a></li>
+								<li id="supply" style="cursor: pointer;" onclick="navigateSupply()"><a
+										class="nav-link">Supply</a></li>
+
+
 								<li><a href="about.html">Contact us</a></li>
 							</ul>
 						</div>
@@ -225,7 +247,7 @@
 							</ul>
 						</div>
 
-					
+
 					</div>
 				</div>
 
@@ -254,14 +276,13 @@
 	</footer>
 	<!-- End Footer Section -->
 
-		<script src="js/LoginApi.js"></script>
-		<script src="js/SignUp.js"></script>
-		<script src="js/bootstrap.bundle.min.js"></script>
-		<script src="js/tiny-slider.js"></script>
-		<script src="js/custom.js"></script>
-        <script src="js/login.js"></script>
-		<script src="js/Navbar.js"></script>
-	</body>
-	
+	<script src="js/SignUp.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/tiny-slider.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/login.js"></script>
+	<script src="js/Navbar.js"></script>
+</body>
+
 
 </html>
