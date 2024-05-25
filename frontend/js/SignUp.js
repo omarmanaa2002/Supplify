@@ -1,16 +1,24 @@
 const baseUrl = `http://localhost:8000`
 
 async function signUp() {
-    let email = document.getElementById('email').value;
-    let password = document.getElementById('password').value;
+    let email = document.getElementById('regEmail').value;
+    let password = document.getElementById('registerPassword').value;
+    let password2 = document.getElementById('registerPassword2').value;
     let fname = document.getElementById('fname').value;
     let lname = document.getElementById('lname').value;
     let phone = document.getElementById('phone').value;
-    let userType = document.getElementById('type').value;
-    let businessLicense = document.getElementById('businessLicense').value;
+    const selectElement = document.getElementById('type');
+    const userType = selectElement.value;
 
-    if (userType == '1') {
+    // let businessLicense = document.getElementById('businessLicense').value;
+    // console.log(selectedValue);
 
+    if(!validatePassword(password,password2)){
+        alert("Passwords must match with 8 characters atleast with 1 uppercase letter");
+        return;
+    }
+    console.log(userType == 1);
+    if (userType == 1) {
         try {
             let bankAccount = document.getElementById('bankAccount').value;
 
@@ -31,7 +39,7 @@ async function signUp() {
                     phone: phone,
                     address: address,
                     bankAccount: bankAccount,
-                    businessLicense: businessLicense,
+                    // businessLicense: businessLicense,
                     userType: "supplier"
                 })
             });
@@ -39,7 +47,7 @@ async function signUp() {
             let result = await response.json();
 
             if (!result.error) {
-                localStorage.setItem('user',JSON.stringify(result.result));
+                localStorage.setItem('user', JSON.stringify(result.result));
                 window.location.href = 'index.html';
                 return;
             } else {
@@ -75,14 +83,14 @@ async function signUp() {
                     address: address,
                     userType: "customer",
                     paymentCardNumber: card,
-                    businessLicense: businessLicense
+                    // businessLicense: businessLicense
                 })
             });
 
             let result = await response.json();
 
             if (!result.error) {
-                localStorage.setItem('user',JSON.stringify(result.result));
+                localStorage.setItem('user', JSON.stringify(result.result));
                 window.location.href = 'index.html';
                 return;
             } else {
@@ -93,5 +101,23 @@ async function signUp() {
         catch (err) {
             console.log(err);
         }
+    }
+}
+
+function validatePassword(password, confirm) {
+    // Check if password is at least 8 characters long
+    if (password != confirm) {
+        return false;
+    }
+    const lengthCheck = password.length >= 8;
+
+    // Check if password contains at least one uppercase letter
+    const uppercaseCheck = /[A-Z]/.test(password);
+
+    // Combine both checks
+    if (lengthCheck && uppercaseCheck) {
+        return true;
+    } else {
+        return false;
     }
 }

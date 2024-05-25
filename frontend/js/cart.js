@@ -225,17 +225,23 @@
 function displayCart() {
   let cartItems = JSON.parse(localStorage.getItem("productsInCart"));
   let productcon = document.querySelector(".products1");
-  let cartCost = localStorage.getItem('total cost');
+  // let cartCost = localStorage.getItem('total cost');
 
   if (cartItems && productcon) {
     productcon.innerHTML = '';
+    var new_total = 0;
+    Object.keys(cartItems).forEach(key => {
+      let item = cartItems[key];
+      new_total+=item.quantity * item.price;
+    })
+
     Object.keys(cartItems).forEach(key => {
       let item = cartItems[key];
       productcon.innerHTML += `
         <div class="product">
           <button class="cartcl" onclick="decrement('${key}')">x</button>
           <img class="imgcart" src="${item.image}">
-          <span>${item.productName}</span>
+          <span>${item.name}</span>
         </div>
         <div class="price">£${item.price}</div>
         <div class="quantity">
@@ -243,13 +249,13 @@ function displayCart() {
           <span>${item.quantity}</span>
           <button onclick="decrement('${key}')" class="cartcl">-</button>
         </div>
-        <div class="total">£${item.quantity * item.price},00</div>
+        <div class="total">£${item.quantity * item.price}</div>
       `;
     });
 
     productcon.innerHTML += `<div class="totalCon">
                                <h4 class="totalTil">Total price</h4>
-                               <h4 class="Btotal">£${cartCost}</h4>
+                               <h4 class="Btotal">£${new_total}</h4>
                              </div>`;
   }
 }

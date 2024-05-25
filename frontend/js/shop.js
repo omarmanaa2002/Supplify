@@ -12,7 +12,7 @@ async function getProducts() {
         products = data.result;
         console.log(data.result);
         for (i in products) {
-            products[i].quantity = 1;  
+            products[i].quantity = 1;
         }
         console.log(products[2].quantity)
     }
@@ -24,6 +24,19 @@ async function getProducts() {
 
 window.onload = async () => {
     await getProducts();
+
+    const formatDateString = (dateString) => {
+        const date = new Date(dateString);
+        if (isNaN(date)) {
+            throw new Error('Invalid date string');
+        }
+
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    };
+
     for (let i of products) {
         //create cards
 
@@ -36,7 +49,7 @@ window.onload = async () => {
 
         //img tag
         let image = document.createElement("img");
-        image.setAttribute("src", i.image);
+        image.setAttribute("src",i.image);
         imgContainer.appendChild(image);
         card.appendChild(imgContainer);
         image.id = "imgid";
@@ -63,17 +76,18 @@ window.onload = async () => {
 
         let weight = document.createElement("p");
         weight.classList.add("weight");
-        weight.innerText = i.weight +"kg"
+        weight.innerText = i.weight + "kg"
         container.appendChild(weight);
+
 
         let proddate = document.createElement("p");
         proddate.classList.add("product-date");
-        proddate.innerText = "product date " + i.proddate
+        proddate.innerText = "product date " + formatDateString(i.proddate)
         container.appendChild(proddate);
 
         let expdate = document.createElement("p");
         expdate.classList.add("product-expdate");
-        expdate.innerText = "expire date " + i.expdate
+        expdate.innerText = "expire date " + formatDateString(i.expdate)
         container.appendChild(expdate);
 
         //prices
@@ -88,6 +102,8 @@ window.onload = async () => {
         container.appendChild(btn);
         document.getElementById("products").appendChild(card);
     }
+
+
     filterProduct("all");
     onLoadCartNumbers();
     let carts = document.querySelectorAll('#addbtn');

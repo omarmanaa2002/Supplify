@@ -20,10 +20,10 @@ const SupplierSchema = new Schema({
             // required: true
         }
     },
-    address: {
-        type: String,
+    // address: {
+    //     type: String,
 
-    },
+    // },
     phone: {
         type: String,
         // required: true

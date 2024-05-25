@@ -1,17 +1,21 @@
+const Catalogue = require("../Models/Catalogue");
 const Order = require("../Models/Order");
 
 const createOrder = async (req, res) => {
 
     try {
-
         const body = req.body;
         //conversion prodcutsInCart => array
         let cart = [];
         //loop on keys of prodcustInCart
-        Object.keys(body.cart).forEach(key => {
+        Object.keys(body.cart).forEach(async key => {
             let item = body.cart[key];
             cart.push(item._id);
+            const product = await Catalogue.findById(item._id);
+            product.quantity -= item.quantity;
+            await product.save();
         });
+    
         body.cart = cart;
         console.log(cart);
         const order = await Order.create(body);

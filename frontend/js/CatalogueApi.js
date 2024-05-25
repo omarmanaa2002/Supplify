@@ -6,6 +6,7 @@ async function postCatalogueData() {
     const catalogueData = {
       // Extract specific data from formData (e.g., formData.get('name'), formData.get('description'))
       name: document.getElementById('product_name').value,
+      image: document.getElementById('product_image_hidden').value,
       descrip: document.getElementById('product_description').value,
       prodType: document.getElementById('product_types').value,
       price: document.getElementById('price').value,
@@ -14,7 +15,11 @@ async function postCatalogueData() {
       proddate: document.getElementById('production_date').value,
       expdate: document.getElementById('expiry_date').value,
     };
-  
+    if(!catalogueData.descrip ){
+      alert("No")
+      return
+    }
+      
     try {
       const response = await fetch(`${baseUrl}/Cat/create`, {
         method: 'POST',
