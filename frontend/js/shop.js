@@ -23,6 +23,7 @@ async function getProducts() {
 }
 
 window.onload = async () => {
+    console.log("test");
     await getProducts();
 
     const formatDateString = (dateString) => {

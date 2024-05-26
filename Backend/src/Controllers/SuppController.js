@@ -54,8 +54,8 @@ const updateSupp = async (req,res) =>
     try{
         const params = req.params;
         const body = req.body
-        const restaurateur = await Restaurateur.findByIdAndUpdate(params.id , body);
-        return res.status(200).send({error : false , message : "Deleted Successfully"});
+        const supp = await Supplier.findByIdAndUpdate(params.id , body);
+        return res.status(200).send({error : false , message : "Updated Successfully", result : supp});
     }
 
     catch (err)

@@ -822,13 +822,15 @@ ul{
                    
                     <li><a class="nav-link" href="shop.html">Shop</a></li>
                     <li><a class="nav-link" href="about.html">About us</a></li>
-                    <li><a class="nav-link" href="services.html">Services</a></li>
-                    <li><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li id="supply" style="cursor: pointer;" onclick="navigateSupply()"><a class="nav-link" >Supply</a></li>
+
+
+                    
                     
                 </ul>
 
                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-                    <li><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
+                    <li><a class="nav-link" onclick="logout()"><img src="images/user.svg"></a></li>
                     <li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
                 </ul>
             </div>
@@ -844,14 +846,7 @@ ul{
                         <div class="user-info">
                             <img class="img-profile img-circle img-responsive center-block"
                                 src="https://bootdey.com/img/Content/avatar/avatar1.png" alt>
-                            <ul class="meta list list-unstyled">
-                                <li class="name" id="username">
-                                    <!-- <label class="label label-info">UX Designer</label> -->
-                                </li>
-                                <li class="social" id="email"></li>
-                                </li>
-                                <li class="activity">Last logged in: Today at 2:18pm</li>
-                            </ul>
+                            
                         </div>
                         <nav class="side-menu">
                             <ul class="nav">
@@ -872,43 +867,32 @@ ul{
                                         <img class="img-rounded img-responsive"
                                             src="https://bootdey.com/img/Content/avatar/avatar1.png" alt>
                                     </figure>
-                                    <div class="form-inline col-md-10 col-sm-9 col-xs-12">
-                                        <input type="file" class="file-uploader pull-left">
-                                        <button type="submit" class="btn btn-sm btn-default-alt pull-left">Update
-                                            Image</button>
-                                    </div>
+                                    
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-md-2 col-sm-3 col-xs-12 control-label">User Name</label>
-                                  
-                                    <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="text" class="form-control" value="Rebecca">
-                                       <p class="help-block">Preferably company name</p>   
-                                    </div>
-                                </div>
+                                
                                 <div class="form-group">
                                     <label class="col-md-2 col-sm-3 col-xs-12 control-label">First Name</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="text" class="form-control" value="Rebecca">
+                                        <input id="fName" type="text" class="form-control" value="Rebecca">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-2 col-sm-3 col-xs-12 control-label">Last Name</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="text" class="form-control" value="Sanders">
+                                        <input id="lName" type="text" class="form-control" value="Sanders">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-2  col-sm-3 col-xs-12 control-label">Email</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="email" class="form-control" value="Rebecca@website.com">
+                                        <input id="email" type="email" class="form-control" value="Rebecca@website.com">
                                         <p class="help-block">This is the company's email </p>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-2  col-sm-3 col-xs-12 control-label">Password</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="email" class="form-control" value="********">
+                                        <input id="password" type="password" class="form-control" value="********">
                                         <p class="help-block">This is Password field </p>
                                     </div>
                                 </div>
@@ -918,24 +902,17 @@ ul{
                                 <div class="form-group">
                                     <label class="col-md-2  col-sm-3 col-xs-12 control-label">Phone Number</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="text" class="form-control" value="01123800042">
+                                        <input id="phone" type="text" class="form-control" value="01123800042">
                                         <p class="help-block">Your phone number</p>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-2  col-sm-3 col-xs-12 control-label">Bank Account Number</label>
                                     <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="text" class="form-control" value="1234567890165">
+                                        <input id="bank" type="text" class="form-control" value="1234567890165">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-md-2  col-sm-3 col-xs-12 control-label">Address</label>
-                                    <div class="col-md-10 col-sm-9 col-xs-12">
-                                        <input type="url" class="form-control"
-                                            value="Gesr el suez, tagnid, cairo">
-                                        <p class="help-block">eg. Building number, Street Name, Region, City </p>
-                                    </div>
-                                </div>
+                                
                             </fieldset>
                             <hr>
                             <div class="form-group">
@@ -965,11 +942,12 @@ ul{
 
         </div>
     </div>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript"></script>
-    <script src="./js/SupplierApi.js"></script>
+    <script src="./js/SupplierProfile.js" defer></script>
+    <script src="./js/Navbar.js"></script>
+
     <script>
         function validateForm() {
           // Get username and password values

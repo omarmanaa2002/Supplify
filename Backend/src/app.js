@@ -51,7 +51,7 @@ app.get("/", (req, res) => {
 // for restaurateur
 app.post('/login' , login);
 app.post('/res/create' , createRestaurateur);
-app.post('/res/update' , updateRes);
+app.post('/res/update/:id' , updateRes);
 app.get('/res/getById/:id' , getResById);
 app.post('/res/get' , getRes);
 app.delete('/res/delete' , deleteRes);
@@ -59,7 +59,7 @@ app.delete('/res/delete' , deleteRes);
 // for supplier
 app.post('/login' , login);
 app.post('/supp/create' , createSupplier);
-app.post('/supp/update' , updateSupp);
+app.post('/supp/update/:id' , updateSupp);
 app.get('/supp/getById/:id' , getSuppById);
 app.post('/supp/get' , getSupp);
 app.delete('/supp/delete' , deleteSupp);
